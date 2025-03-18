@@ -11,7 +11,7 @@ import { SignIn } from "../2pageFlat/Authorization/SignIn";
 
 function App() {
   return (
-    <div>
+    <div className="h-full">
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
           <Route index path="" element={<Main/>}></Route>
