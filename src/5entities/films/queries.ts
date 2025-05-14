@@ -1,5 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
-import { filmsControllerFindAll, filmsControllerFindOne } from "../../6shared/api/generated";
+import { authControllerLogin, RegisterDto } from './../../6shared/api/generated';
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { authControllerRegister, filmsControllerFindAll, filmsControllerFindOne } from "../../6shared/api/generated";
+
+const AuthKey=['auth-key']
 
 export function useFilmsQuery() {
   return useQuery({
@@ -10,7 +13,27 @@ export function useFilmsQuery() {
 
 export function useOneFilmQuery(id:string) {
   return useQuery({
-    queryKey: ["onefilm"],
+    queryKey: [`onefilm-${id}`],
     queryFn: () => filmsControllerFindOne(id),
+  });
+}
+
+export function useAuthRegisterQuery() {
+  const queryClient=useQueryClient()
+  return useMutation({
+    mutationFn: authControllerRegister,
+    async onSettled(){
+      await queryClient.invalidateQueries({queryKey:AuthKey})
+    }
+  });
+}
+
+export function useAuthLoginQuery() {
+  const queryClient=useQueryClient()
+  return useMutation({
+    mutationFn: authControllerLogin,
+    async onSettled(){
+      await queryClient.invalidateQueries({queryKey:AuthKey})
+    }
   });
 }

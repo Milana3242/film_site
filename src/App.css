@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.card {
+  width: 30%;
+  background: #6c81ac;
+  padding: 10px;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
 /*#root {
   max-width: 1280px;
   margin: 0 auto;
