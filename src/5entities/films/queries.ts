@@ -1,4 +1,4 @@
-import { authControllerLogin, RegisterDto } from './../../6shared/api/generated';
+import { authControllerLogin, lessonsControllerCreate, RegisterDto } from './../../6shared/api/generated';
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { authControllerRegister, filmsControllerFindAll, filmsControllerFindOne } from "../../6shared/api/generated";
 
@@ -34,6 +34,15 @@ export function useAuthLoginQuery() {
     mutationFn: authControllerLogin,
     async onSettled(){
       await queryClient.invalidateQueries({queryKey:AuthKey})
+    }
+  });
+}
+export function useLessonQuery() {
+  const queryClient=useQueryClient()
+  return useMutation({
+    mutationFn: lessonsControllerCreate,
+    async onSettled(){
+      await queryClient.invalidateQueries({queryKey:['LessonKey']})
     }
   });
 }
