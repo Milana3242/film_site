@@ -107,9 +107,9 @@ export function OneFilmRender(props: IOneFilmRenderProps) {
             </div>
           </div>
           <hr className="mt-10 mb-5" />
-          {/* <label htmlFor="slider" className="time">
+          <label htmlFor="slider" className="time">
             Выберите длительность:
-          </label> */}
+          </label>
           {/* <MultiRangeSlider
             id="slider"
             min={1}
