@@ -39,7 +39,7 @@ export function OneFilmRender(props: IOneFilmRenderProps) {
   //   const minValue = watch('minValue');
   //   const maxValue = watch('maxValue');
 
-  const mutation = useLessonQuery();
+  let mutation = useLessonQuery();
 
   function onSubmit(item: any) {
     console.log(item);
