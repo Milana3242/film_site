@@ -19,12 +19,8 @@ function App() {
           <Route index path="" element={<Main />}></Route>
           <Route index path="auth/signup" element={<SignUp />}></Route>
           <Route index path="auth/signin" element={<SignIn />}></Route>
-          <Route index path="/films" element={<AllFilmsRender />}></Route>
-          <Route
-            index
-            path="/film-open/:id"
-            element={<OneFilmRender />}
-          ></Route>
+          <Route index path="films" element={<AllFilmsRender />}></Route>
+          <Route index path="film-open/:id" element={<OneFilmRender />}></Route>
         </Route>
       </Routes>
     </div>
