@@ -267,6 +267,13 @@ export type FileUploadControllerUploadFilesBody = {
 type SecondParameter<T extends (...args: never) => unknown> = Parameters<T>[1];
 
 
+const getToken= ()=>{
+  return localStorage.getItem('auth')
+}
+
+const token=getToken()
+
+
   export const appControllerGetHello = (
     
  options?: SecondParameter<typeof createInstance>,) => {
@@ -589,9 +596,15 @@ export const usersControllerRemove = (
 export const lessonsControllerCreate = (
     createLessonDto: BodyType<CreateLessonDto>,
  options?: SecondParameter<typeof createInstance>,) => {
-      return createInstance<LessonEntity>(
-      {url: `/lessons`, method: 'POST',
-      headers: {'Content-Type': 'application/json', },
+  return createInstance<LessonEntity>({ url: '/lessons',
+
+    method: 'POST',
+    
+    headers: {
+    
+    'Content-Type': 'application/json',
+    
+    Authorization: Bearer ${token},}
       data: createLessonDto
     },
       options);

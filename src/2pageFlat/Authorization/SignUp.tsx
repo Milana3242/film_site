@@ -28,12 +28,13 @@ export function SignUp(props: ISignUpProps) {
       'auth',
       mutation.data ? mutation.data.accessToken : ''
     );
+    console.log(mutation.data?.accessToken);
     reset();
     setTimeout(() => {
       if (mutation.isSuccess === true) {
         navigate('/films');
       }
-    }, 100);
+    }, 1000);
   }
 
   return (

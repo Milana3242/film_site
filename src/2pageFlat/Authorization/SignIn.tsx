@@ -28,6 +28,7 @@ export function SignIn(props: ISignInProps) {
     );
     reset();
     setTimeout(() => {
+      console.log(mutation.error);
       if (mutation.error === null) {
         navigate('/films');
       }

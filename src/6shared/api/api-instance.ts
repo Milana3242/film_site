@@ -33,7 +33,7 @@ apiInstance.interceptors.response.use(
         if (error.response && error.response.status === 401) {
             console.log('Unauthorized access - possibly invalid token');
             localStorage.removeItem('auth-data');
-            window.location.href = '/auth';
+            window.location.href = '/auth/signIn';
         }
         return Promise.reject(error);
     },
