@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "api:download": "curl https://d5caef6911b3.vps.myjino.ru/api-json --output ./src/6shared/api/schema.yaml",
+    "api:download": "curl https://d5caef6911b3.vps.myjino.ru/api-json --output ./src/shared/api/schema.yaml",
     "api:generate": "orval",
     "api:download:generate": "npm run api:download && npm run api:generate"
   },
@@ -17,12 +17,14 @@
     "@tailwindcss/postcss": "^4.0.14",
     "@tanstack/react-query": "^5.69.0",
     "@tanstack/react-query-devtools": "^5.69.0",
+    "@tanstack/react-router": "^1.120.5",
     "axios": "^1.8.3",
     "multi-range-slider-react": "^2.0.7",
     "orval": "^7.7.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
+    "react-range": "^1.10.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.3.0",
     "tailwind": "^4.0.0"
